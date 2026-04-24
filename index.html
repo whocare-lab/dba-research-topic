@@ -1,0 +1,1466 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>演算法治理下的組織變革：生成式 AI 對成員心理安全感與認知社會資本的重塑機制研究</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #475569;
+            --accent: #f59e0b;
+            --neutral: #64748b;
+            --base-100: #ffffff;
+            --base-200: #f8fafc;
+            --base-300: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--secondary);
+        }
+        
+        .serif {
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 320px;
+            height: 100vh;
+            background: var(--base-100);
+            border-right: 1px solid var(--base-300);
+            overflow-y: auto;
+            z-index: 1000;
+            padding: 2rem 1.5rem;
+        }
+        
+        .main-content {
+            margin-left: 320px;
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #3730a3 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(30, 58, 138, 0.8);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 2rem;
+            height: 100%;
+        }
+        
+        .bento-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .citation {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .citation:hover {
+            text-decoration: underline;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--base-300), transparent);
+            margin: 4rem 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Mermaid theme customization for better contrast */
+        .mermaid .node rect,
+        .mermaid .node circle,
+        .mermaid .node ellipse,
+        .mermaid .node polygon {
+            fill: var(--base-100) !important;
+            stroke: var(--primary) !important;
+            stroke-width: 2px !important;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        /* Different node colors with good contrast */
+        .mermaid .node:nth-child(4n+1) rect,
+        .mermaid .node:nth-child(4n+1) circle,
+        .mermaid .node:nth-child(4n+1) ellipse,
+        .mermaid .node:nth-child(4n+1) polygon {
+            fill: #e1f5fe !important;
+            stroke: #0277bd !important;
+        }
+        
+        .mermaid .node:nth-child(4n+2) rect,
+        .mermaid .node:nth-child(4n+2) circle,
+        .mermaid .node:nth-child(4n+2) ellipse,
+        .mermaid .node:nth-child(4n+2) polygon {
+            fill: #f3e5f5 !important;
+            stroke: #7b1fa2 !important;
+        }
+        
+        .mermaid .node:nth-child(4n+3) rect,
+        .mermaid .node:nth-child(4n+3) circle,
+        .mermaid .node:nth-child(4n+3) ellipse,
+        .mermaid .node:nth-child(4n+3) polygon {
+            fill: #e8f5e8 !important;
+            stroke: #2e7d32 !important;
+        }
+        
+        .mermaid .node:nth-child(4n+4) rect,
+        .mermaid .node:nth-child(4n+4) circle,
+        .mermaid .node:nth-child(4n+4) ellipse,
+        .mermaid .node:nth-child(4n+4) polygon {
+            fill: #fff3e0 !important;
+            stroke: #ef6c00 !important;
+        }
+        
+        .mermaid .node .label {
+            color: var(--secondary) !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+        }
+        
+        .mermaid .edgePath .path {
+            stroke: var(--neutral) !important;
+            stroke-width: 2px !important;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+        }
+        
+        .mermaid .edgeLabel {
+            background-color: var(--base-100) !important;
+            color: var(--secondary) !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 12px !important;
+            font-weight: 500 !important;
+            padding: 4px 8px !important;
+            border-radius: 4px !important;
+            border: 1px solid var(--base-300) !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+        }
+        
+        /* Timeline specific styling */
+        .mermaid .section {
+            fill: var(--base-200) !important;
+            stroke: var(--primary) !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .section0 {
+            fill: #e3f2fd !important;
+            stroke: #1565c0 !important;
+        }
+        
+        .mermaid .section1 {
+            fill: #f3e5f5 !important;
+            stroke: #6a1b9a !important;
+        }
+        
+        .mermaid .section2 {
+            fill: #e8f5e8 !important;
+            stroke: #2e7d32 !important;
+        }
+        
+        .mermaid .section3 {
+            fill: #fff3e0 !important;
+            stroke: #ef6c00 !important;
+        }
+        
+        .mermaid .cScale0, .mermaid .cScale1, .mermaid .cScale2, .mermaid .cScale3 {
+            fill: var(--secondary) !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Timeline task styling */
+        .mermaid .task {
+            fill: var(--base-100) !important;
+            stroke: var(--primary) !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .taskText {
+            fill: var(--secondary) !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 12px !important;
+            font-weight: 500 !important;
+        }
+        
+        /* Ensure text contrast for all mermaid elements */
+        .mermaid text {
+            fill: var(--secondary) !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+        
+        .mermaid .titleText {
+            fill: var(--primary) !important;
+            font-size: 16px !important;
+            font-weight: 700 !important;
+        }
+        
+        /* Enhanced contrast for different node types */
+        .mermaid .node[class*="default"] rect,
+        .mermaid .node.default rect {
+            fill: var(--base-100) !important;
+            stroke: var(--primary) !important;
+        }
+        
+        .mermaid .node[class*="primary"] rect,
+        .mermaid .node.primary rect {
+            fill: #e3f2fd !important;
+            stroke: #1565c0 !important;
+        }
+        
+        .mermaid .node[class*="secondary"] rect,
+        .mermaid .node.secondary rect {
+            fill: #f3e5f5 !important;
+            stroke: #6a1b9a !important;
+        }
+        
+        .mermaid .node[class*="success"] rect,
+        .mermaid .node.success rect {
+            fill: #e8f5e8 !important;
+            stroke: #2e7d32 !important;
+        }
+        
+        .mermaid .node[class*="warning"] rect,
+        .mermaid .node.warning rect {
+            fill: #fff3e0 !important;
+            stroke: #ef6c00 !important;
+        }
+        
+        .mermaid .node[class*="danger"] rect,
+        .mermaid .node.danger rect {
+            fill: #ffebee !important;
+            stroke: #c62828 !important;
+        }
+        
+        /* Timeline section styling */
+        .mermaid .timeline-section {
+            fill: var(--base-200) !important;
+            stroke: var(--primary) !important;
+            stroke-width: 2px !important;
+        }
+        
+        .mermaid .timeline-section-title {
+            fill: var(--primary) !important;
+            font-weight: 700 !important;
+            font-size: 14px !important;
+        }
+        
+@media (max-width: 1024px) {
+    .toc-fixed {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .toc-fixed.open {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mermaid-control-btn:not(.reset-zoom) {
+        display: none;
+    }
+    .mermaid-controls {
+        top: auto;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .hero-content .serif {
+        font-size: 2.5rem;
+    }
+    
+    .bento-item {
+        padding: 1rem;
+    }
+}
+    </style>
+  <base target="_blank">
+</head>
+
+  <body class="bg-gray-50">
+    <!-- Fixed Table of Contents -->
+    <nav class="toc-fixed">
+      <div class="mb-8">
+        <h3 class="text-lg font-bold text-gray-900 mb-4">目錄</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="#hero" class="block py-1 px-2 rounded hover:bg-blue-50 text-blue-700">研究概覽</a>
+          </li>
+          <li>
+            <a href="#core-issue" class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600">核心議題</a>
+          </li>
+          <li>
+            <a href="#problem-statement" class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600">問題意識</a>
+          </li>
+          <li>
+            <a href="#cimo-framework" class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600">CIMO框架</a>
+          </li>
+          <li>
+            <a href="#research-method" class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600">研究方法</a>
+          </li>
+          <li>
+            <a href="#smart-check" class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600">SMART檢核</a>
+          </li>
+          <li>
+            <a href="#convergence" class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600">收斂歷程</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="border-t pt-4">
+        <p class="text-xs text-gray-500 mb-2">研究焦點</p>
+        <div class="space-y-2 text-xs">
+          <div class="bg-blue-50 p-2 rounded">
+            <span class="font-medium text-blue-700">演算法治理</span>
+          </div>
+          <div class="bg-amber-50 p-2 rounded">
+            <span class="font-medium text-amber-700">心理安全感</span>
+          </div>
+          <div class="bg-green-50 p-2 rounded">
+            <span class="font-medium text-green-700">認知社會資本</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content relative">
+          <div class="container mx-auto px-8 py-16">
+            <div class="bento-grid max-w-6xl mx-auto">
+              <!-- Main Title -->
+              <div class="bento-item col-span-2">
+                <h1 class="text-5xl font-bold serif mb-6 leading-tight">
+                  演算法治理下的組織變革
+                </h1>
+                <p class="text-xl mb-4 opacity-90">
+                  生成式 AI 對成員心理安全感與認知社會資本的重塑機制研究
+                </p>
+                <div class="flex items-center space-x-4 text-sm opacity-75">
+                  <span><i class="fas fa-brain mr-2"></i>組織行為學</span>
+                  <span><i class="fas fa-robot mr-2"></i>人工智慧</span>
+                  <span><i class="fas fa-users mr-2"></i>數位轉型</span>
+                </div>
+              </div>
+
+              <!-- Key Insights -->
+              <div class="bento-item">
+                <h3 class="text-lg font-semibold mb-4">核心洞察</h3>
+                <div class="space-y-3 text-sm">
+                  <div class="flex items-start">
+                    <i class="fas fa-exclamation-triangle text-amber-300 mr-3 mt-1"></i>
+                    <span>33%員工報告AI在團隊間製造緊張</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-shield-alt text-green-300 mr-3 mt-1"></i>
+                    <span>心理安全感是變革成敗的關鍵變項</span>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-network-wired text-blue-300 mr-3 mt-1"></i>
+                    <span>認知社會資本面臨演算法中介的侵蝕風險</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Research Framework -->
+              <div class="bento-item">
+                <h3 class="text-lg font-semibold mb-4">研究框架</h3>
+                <div class="text-sm space-y-2">
+                  <div class="flex justify-between">
+                    <span>背景 (Context)</span>
+                    <span class="opacity-75">知識型組織</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>干預 (Intervention)</span>
+                    <span class="opacity-75">GenAI系統</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>機制 (Mechanism)</span>
+                    <span class="opacity-75">認知重塑</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>結果 (Outcome)</span>
+                    <span class="opacity-75">變革效能</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Issue Section -->
+      <section id="core-issue" class="py-16 bg-white">
+        <div class="container mx-auto px-8 max-w-4xl">
+          <h2 class="text-3xl font-bold serif text-gray-900 mb-8">研究核心議題</h2>
+
+          <div class="prose prose-lg max-w-none">
+            <div class="highlight-box">
+              <h3 class="text-xl font-semibold mb-4">技術躍遷中的治理邏輯轉換</h3>
+              <p class="text-gray-700">
+                當代組織正經歷從「人際直覺」到「演算法決策」的深刻治理典範轉移。傳統組織運作高度依賴管理者的人際直覺、經驗判斷與非正式溝通網絡，而隨著生成式AI技術的成熟，企業治理逐漸轉向以數據驅動、邏輯推演與演算法優化為核心的「演算法治理」模式。
+              </p>
+              <p class="text-sm text-gray-600 mt-3">
+                <a href="https://www.finance.group.cam.ac.uk/system/files/documents/GovernancebyAlgorithm_CERF_Zhenbin6.16.2020.pdf" class="citation" target="_blank">
+                  演算法治理是一種混合模式，由社會規範、法律、數字與代碼四種治理模式層疊而成
+                </a>
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mt-12">
+              <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-400">
+                <h4 class="font-semibold text-red-800 mb-3">組織文化根基的挑戰</h4>
+                <p class="text-red-700 text-sm">
+                  心理安全感作為變革成敗的關鍵變項，在GenAI時代面臨前所未有的複雜挑戰。
+                  <a href="https://www.cmu.edu/sites/default/files/cmu-tepper-site-files/documents/Brown%20Proposal%20Abstract%20%281%29.pdf" class="citation" target="_blank">
+                    研究顯示，在間接評估情境下，與GenAI夥伴的心理安全感顯著下降
+                  </a>
+                </p>
+              </div>
+
+              <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-400">
+                <h4 class="font-semibold text-amber-800 mb-3">無形資產的重組壓力</h4>
+                <p class="text-amber-700 text-sm">
+                  認知社會資本在演算法中介下面臨系統性侵蝕風險。GenAI的三項關鍵社會技術特性可能重新路由員工的互動方式。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Problem Statement Section -->
+      <section id="problem-statement" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-8 max-w-4xl">
+          <h2 class="text-3xl font-bold serif text-gray-900 mb-8">問題意識陳述</h2>
+
+          <div class="space-y-8">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold mb-4 text-blue-900">理論衝突：Schein變革理論與GenAI黑盒特性的張力</h3>
+              <p class="text-gray-700 mb-4">
+                一方面，Schein的組織變革理論強調成功的變革需要成員具備足夠的心理安全感來面對認知失調與不確定性。另一方面，GenAI的「黑盒」本質與自動化決策能力卻可能系統性地破壞這種平衡。
+              </p>
+              <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-400">
+                <p class="text-blue-800 text-sm">
+                  當成員無法理解演算法為何做出特定決策時，其對組織過程的理解與預測能力受到侵蝕，進而可能啟動心理防衛機制。
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold mb-4 text-red-900">實務缺口：情境導引的喪失</h3>
+              <p class="text-gray-700 mb-4">
+                當前企業在導入GenAI時，普遍面臨對「演算法作為溝通中介」所引發的社會動態缺乏系統性理解。
+                <a href="https://blog.perceptyx.com/ais-cultural-impact-new-data-reveals-leadership-makes-the-difference" class="citation" target="_blank">
+                  僅有17%的組織具備策略清晰的AI導入計畫
+                </a>
+              </p>
+
+              <div class="grid md:grid-cols-3 gap-4 mt-6">
+                <div class="text-center p-4 bg-gray-100 rounded">
+                  <div class="text-2xl font-bold text-red-600">31%</div>
+                  <div class="text-sm text-gray-600">組織無正式AI導入策略</div>
+                </div>
+                <div class="text-center p-4 bg-gray-100 rounded">
+                  <div class="text-2xl font-bold text-amber-600">21%</div>
+                  <div class="text-sm text-gray-600">員工處於獨立實驗狀態</div>
+                </div>
+                <div class="text-center p-4 bg-gray-100 rounded">
+                  <div class="text-2xl font-bold text-blue-600">33%</div>
+                  <div class="text-sm text-gray-600">AI在團隊間製造緊張</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CIMO Framework Section -->
+      <section id="cimo-framework" class="py-16 bg-white">
+        <div class="container mx-auto px-8 max-w-6xl">
+          <h2 class="text-3xl font-bold serif text-gray-900 mb-8">學術研究框架：CIMO邏輯</h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-blue-50 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-blue-900 mb-4">背景 (Context)</h3>
+              <ul class="space-y-2 text-sm text-blue-800">
+                <li>• 導入GenAI的知識型組織</li>
+                <li>• 以數據與邏輯為核心的演算法治理</li>
+                <li>• 人機協作的治理架構</li>
+              </ul>
+            </div>
+
+            <div class="bg-green-50 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-green-900 mb-4">干預 (Intervention)</h3>
+              <ul class="space-y-2 text-sm text-green-800">
+                <li>• AI輔助決策系統</li>
+                <li>• 自動化反饋機制</li>
+                <li>• AI中介的溝通平台</li>
+              </ul>
+            </div>
+
+            <div class="bg-amber-50 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-amber-900 mb-4">機制 (Mechanism)</h3>
+              <ul class="space-y-2 text-sm text-amber-800">
+                <li>• 認知社會資本的轉譯過程</li>
+                <li>• 心理安全感的雙路徑機制</li>
+                <li>• 自主性感知的介導作用</li>
+              </ul>
+            </div>
+
+            <div class="bg-purple-50 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-purple-900 mb-4">結果 (Outcome)</h3>
+              <ul class="space-y-2 text-sm text-purple-800">
+                <li>• 成員對變革的認同度</li>
+                <li>• 數位發聲意願</li>
+                <li>• 組織轉型效能</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mechanism Diagram -->
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <h3 class="text-xl font-semibold mb-6 text-center">機制運作流程圖</h3>
+            <div class="mermaid-container">
+              <div class="mermaid-controls">
+                <button class="mermaid-control-btn zoom-in" title="放大">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+                <button class="mermaid-control-btn zoom-out" title="缩小">
+                  <i class="fas fa-search-minus"></i>
+                </button>
+                <button class="mermaid-control-btn reset-zoom" title="重置">
+                  <i class="fas fa-expand-arrows-alt"></i>
+                </button>
+                <button class="mermaid-control-btn fullscreen" title="全屏查看">
+                  <i class="fas fa-expand"></i>
+                </button>
+              </div>
+              <div class="mermaid" id="mechanism-diagram">
+                graph TD
+                A[&#34;GenAI干預&#34;] --&gt; B[&#34;認知社會資本轉譯&#34;]
+                B --&gt; C[&#34;共享心智模型演變&#34;]
+                B --&gt; D[&#34;組織敘事改變&#34;]
+                B --&gt; E[&#34;信任基礎轉移&#34;]
+                C --&gt; F[&#34;心理安全感變化&#34;]
+                D --&gt; F
+                E --&gt; F
+                F --&gt; G[&#34;威脅評估路徑&#34;]
+                F --&gt; H[&#34;學習機會評估路徑&#34;]
+                G --&gt; I[&#34;自主性感知&#34;]
+                H --&gt; I
+                I --&gt; J[&#34;變革認同度&#34;]
+                I --&gt; K[&#34;數位發聲意願&#34;]
+                I --&gt; L[&#34;組織轉型效能&#34;]
+
+                style A fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
+                style F fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+                style I fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+                style J fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+                style K fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+                style L fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Research Method Section -->
+      <section id="research-method" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-8 max-w-6xl">
+          <h2 class="text-3xl font-bold serif text-gray-900 mb-8">研究方法設計</h2>
+
+          <div class="grid md:grid-cols-2 gap-12">
+            <!-- Qualitative Methods -->
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold mb-6 text-blue-900">
+                <i class="fas fa-comments mr-3"></i>質性研究路徑
+              </h3>
+
+              <div class="space-y-6">
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2">個案訪談設計</h4>
+                  <p class="text-gray-600 text-sm mb-3">
+                    採用半結構式訪談大綱，深度挖掘成員在演算法治理導入過程中的心理轉折與適應歷程。
+                  </p>
+                  <ul class="text-xs text-gray-500 space-y-1">
+                    <li>• 初始反應與適應歷程</li>
+                    <li>• GenAI互動經驗與感受</li>
+                    <li>• 組織氛圍變化觀察</li>
+                    <li>• 專業自主性評估</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2">組織民族誌</h4>
+                  <p class="text-gray-600 text-sm">
+                    透過參與觀察，記錄人機協作的具體場景、成員的非語言反應與群體互動動態模式。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quantitative Methods -->
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold mb-6 text-green-900">
+                <i class="fas fa-chart-bar mr-3"></i>量化研究路徑
+              </h3>
+
+              <div class="space-y-6">
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2">心理安全感量表</h4>
+                  <p class="text-gray-600 text-sm mb-3">
+                    採用情境適應性修訂的量表，增加評估演算法監控感知、人機信任與認知自主性的項目。
+                  </p>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2">認知社會資本維度量表</h4>
+                  <p class="text-gray-600 text-sm mb-3">
+                    採用縱貫式測量策略，在GenAI導入前、中、後四個時間點進行重複測量。
+                  </p>
+                  <ul class="text-xs text-gray-500 space-y-1">
+                    <li>• 共享語言評估</li>
+                    <li>• 共享心智模型測量</li>
+                    <li>• 共同願景分析</li>
+                    <li>• 人機共享認知</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2">結構方程模型</h4>
+                  <p class="text-gray-600 text-sm">
+                    運用SEM統計驗證CIMO框架中的機制路徑，檢驗中介效應與調節效應。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mixed Methods Integration -->
+          <div class="mt-12 bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-6 text-purple-900">
+              <i class="fas fa-sync-alt mr-3"></i>混合方法整合
+            </h3>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-3">順序式探索設計</h4>
+                <p class="text-gray-600 text-sm">
+                  質性發現引導量化驗證：第一階段以質性方法探索機制與情境條件，第二階段以量化方法驗證普遍性。
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-3">並行式三角驗證</h4>
+                <p class="text-gray-600 text-sm">
+                  透過多源數據交叉確認：自陳式量表、客觀行為數據與同儕評定數據的聯合分析。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SMART Check Section -->
+      <section id="smart-check" class="py-16 bg-white">
+        <div class="container mx-auto px-8 max-w-6xl">
+          <h2 class="text-3xl font-bold serif text-gray-900 mb-8">SMART檢核與研究可行性</h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Specific -->
+            <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-400">
+              <h3 class="text-lg font-semibold text-blue-900 mb-4">
+                <i class="fas fa-bullseye mr-2"></i>聚焦性 (Specific)
+              </h3>
+              <div class="space-y-3 text-sm text-blue-800">
+                <div class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  <span>背景限定：知識型組織</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  <span>干預聚焦：GenAI決策輔助</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  <span>機制鎖定：認知重塑過程</span>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  <span>結果明確：變革效能指標</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Measurable -->
+            <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-400">
+              <h3 class="text-lg font-semibold text-green-900 mb-4">
+                <i class="fas fa-ruler mr-2"></i>可衡量性 (Measurable)
+              </h3>
+              <div class="space-y-3 text-sm text-green-800">
+                <div>
+                  <strong>質性指標：</strong>
+                  <ul class="ml-4 mt-1 text-xs">
+                    <li>• 編碼一致性係數 &gt; 0.80</li>
+                    <li>• 主題飽和度分析</li>
+                    <li>• 敘事結構化框架</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>量化指標：</strong>
+                  <ul class="ml-4 mt-1 text-xs">
+                    <li>• 量表信效度檢驗</li>
+                    <li>• 結構模型配適度</li>
+                    <li>• 中介效應檢驗</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Achievable -->
+            <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-400">
+              <h3 class="text-lg font-semibold text-amber-900 mb-4">
+                <i class="fas fa-cogs mr-2"></i>可行性 (Achievable)
+              </h3>
+              <div class="space-y-3 text-sm text-amber-800">
+                <div>
+                  <strong>文獻支撐：</strong>
+                  <ul class="ml-4 mt-1 text-xs">
+                    <li>• 成熟的管理理論基礎</li>
+                    <li>• 豐富的AI工具研究</li>
+                    <li>• 完善的CIMO方法論</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>田野條件：</strong>
+                  <ul class="ml-4 mt-1 text-xs">
+                    <li>• 產業合作網絡</li>
+                    <li>• 研究倫理規範</li>
+                    <li>• 組織接觸管道</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Relevant -->
+            <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-400">
+              <h3 class="text-lg font-semibold text-purple-900 mb-4">
+                <i class="fas fa-star mr-2"></i>相關性 (Relevant)
+              </h3>
+              <div class="space-y-3 text-sm text-purple-800">
+                <div>
+                  <strong>實務貢獻：</strong>
+                  <ul class="ml-4 mt-1 text-xs">
+                    <li>• 直擊企業轉型痛點</li>
+                    <li>• 提供具體管理指引</li>
+                    <li>• 95% AI項目失敗的解方</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>學術貢獻：</strong>
+                  <ul class="ml-4 mt-1 text-xs">
+                    <li>• 擴展心理安全感理論</li>
+                    <li>• 豐富認知社會資本理論</li>
+                    <li>• 推進數位領導力研究</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Time-bound -->
+            <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-400">
+              <h3 class="text-lg font-semibold text-red-900 mb-4">
+                <i class="fas fa-clock mr-2"></i>時效性 (Time-bound)
+              </h3>
+              <div class="space-y-3 text-sm text-red-800">
+                <div>
+                  <strong>議題急迫性：</strong>
+                  <ul class="ml-4 mt-1 text-xs">
+                    <li>• GenAI快速擴散</li>
+                    <li>• 80%組織增加投資</li>
+                    <li>• 24%已整合應用</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>修業規劃：</strong>
+                  <ul class="ml-4 mt-1 text-xs">
+                    <li>• 30個月完成週期</li>
+                    <li>• 四階段系統推進</li>
+                    <li>• 預留發表時間</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline -->
+          <div class="mt-12 bg-gray-50 p-8 rounded-lg">
+            <h3 class="text-xl font-semibold mb-6 text-center">博士學程階段性產出規劃</h3>
+            <div class="mermaid-container">
+              <div class="mermaid-controls">
+                <button class="mermaid-control-btn zoom-in" title="放大">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+                <button class="mermaid-control-btn zoom-out" title="缩小">
+                  <i class="fas fa-search-minus"></i>
+                </button>
+                <button class="mermaid-control-btn reset-zoom" title="重置">
+                  <i class="fas fa-expand-arrows-alt"></i>
+                </button>
+                <button class="mermaid-control-btn fullscreen" title="全屏查看">
+                  <i class="fas fa-expand"></i>
+                </button>
+              </div>
+              <div class="mermaid" id="timeline-diagram">
+                timeline
+                title &#34;研究時程規劃&#34;
+
+                section &#34;第一階段&#34;
+                1-6月 : &#34;文獻回顧深化&#34;
+                : &#34;理論框架精煉&#34;
+                : &#34;研究工具開發&#34;
+
+                section &#34;第二階段&#34;
+                7-14月 : &#34;質性資料收集&#34;
+                : &#34;訪談與民族誌&#34;
+                : &#34;初步命題形成&#34;
+
+                section &#34;第三階段&#34;
+                15-22月 : &#34;量化資料收集&#34;
+                : &#34;縱貫式調查&#34;
+                : &#34;結構方程模型&#34;
+
+                section &#34;第四階段&#34;
+                23-30月 : &#34;資料整合分析&#34;
+                : &#34;論文撰寫&#34;
+                : &#34;期刊投稿&#34;
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Convergence Process Section -->
+      <section id="convergence" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-8 max-w-6xl">
+          <h2 class="text-3xl font-bold serif text-gray-900 mb-8">選題收斂歷程與方法論創新</h2>
+
+          <div class="space-y-12">
+            <!-- Three Stages -->
+            <div class="grid md:grid-cols-3 gap-8">
+              <!-- Stage 1 -->
+              <div class="bg-white p-8 rounded-lg shadow-sm">
+                <div class="text-center mb-6">
+                  <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-blue-600">1</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-blue-900">學術對話</h3>
+                </div>
+                <p class="text-gray-700 text-sm mb-4">
+                  辨識數位變革中「情境缺失」的文獻缺口，發現心理安全感與認知社會資本研究的理論盲點。
+                </p>
+                <div class="bg-blue-50 p-3 rounded text-xs text-blue-800">
+                  <strong>關鍵發現：</strong>既有文獻忽略演算法中介對組織社會結構的深層影響
+                </div>
+              </div>
+
+              <!-- Stage 2 -->
+              <div class="bg-white p-8 rounded-lg shadow-sm">
+                <div class="text-center mb-6">
+                  <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-green-600">2</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-green-900">根因分析</h3>
+                </div>
+                <p class="text-gray-700 text-sm mb-4">
+                  運用5 Whys技術挖掘領導者忽略認知資本重塑的實務根因，揭示研究-實務-評估生態系統的結構性缺陷。
+                </p>
+                <div class="bg-green-50 p-3 rounded text-xs text-green-800">
+                  <strong>核心問題：</strong>缺乏適用於演算法治理情境的有效測量工具
+                </div>
+              </div>
+
+              <!-- Stage 3 -->
+              <div class="bg-white p-8 rounded-lg shadow-sm">
+                <div class="text-center mb-6">
+                  <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-amber-600">3</span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-amber-900">創意碰撞</h3>
+                </div>
+                <p class="text-gray-700 text-sm mb-4">
+                  運用SCAMPER奔馳法與矩陣分析，將傳統組織文化理論與生成式AI趨勢進行跨域創新組合。
+                </p>
+                <div class="bg-amber-50 p-3 rounded text-xs text-amber-800">
+                  <strong>創新突破：</strong>發展出「演算法領導的公平感知效應」等核心研究假設
+                </div>
+              </div>
+            </div>
+
+            <!-- SCAMPER Matrix -->
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+              <h3 class="text-xl font-semibold mb-6 text-center">SCAMPER奔馳法的跨域創新組合</h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="bg-gray-50">
+                      <th class="text-left p-3 font-semibold">SCAMPER維度</th>
+                      <th class="text-left p-3 font-semibold">傳統元素</th>
+                      <th class="text-left p-3 font-semibold">AI元素</th>
+                      <th class="text-left p-3 font-semibold">創新組合</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200">
+                    <tr>
+                      <td class="p-3 font-medium">替代 (Substitute)</td>
+                      <td class="p-3">人類領導者提供心理安全感</td>
+                      <td class="p-3">演算法領導者提供心理安全感</td>
+                      <td class="p-3 text-blue-600">「算法領導的公平感知效應」研究假設</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 font-medium">結合 (Combine)</td>
+                      <td class="p-3">共享心智模型</td>
+                      <td class="p-3">人機協作認知</td>
+                      <td class="p-3 text-blue-600">「人機共享心智模型」分析構念</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 font-medium">調適 (Adapt)</td>
+                      <td class="p-3">組織敘事的人際傳播</td>
+                      <td class="p-3">AI生成的敘事內容</td>
+                      <td class="p-3 text-blue-600">「演算法敘事的認同建構」機制探討</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 font-medium">修改 (Modify)</td>
+                      <td class="p-3">靜態的認知社會資本測量</td>
+                      <td class="p-3">動態的縱貫追蹤設計</td>
+                      <td class="p-3 text-blue-600">「認知資本演化軌跡」研究方法</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 font-medium">他用 (Put to other uses)</td>
+                      <td class="p-3">心理安全感促進團隊學習</td>
+                      <td class="p-3">心理安全感促進人機協作學習</td>
+                      <td class="p-3 text-blue-600">「雙路徑框架的AI時代擴展」</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Methodological Innovation -->
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-lg">
+              <h3 class="text-xl font-semibold mb-6 text-center">方法論創新點</h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-3">施育廷框架的系統化應用</h4>
+                  <p class="text-gray-700 text-sm mb-4">
+                    從問題發現到議題定案的結構化流程，確保選題既具有理論前沿性，又具備實務相關性。
+                  </p>
+                  <div class="bg-white p-3 rounded text-xs text-gray-600">
+                    <strong>核心價值：</strong>避免過早聚焦導致視野狹窄，或過度發散導致缺乏深度
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-3">跨域理論整合創新</h4>
+                  <p class="text-gray-700 text-sm mb-4">
+                    將傳統組織行為理論與前沿AI技術趨勢進行創新性結合，開拓數位時代的組織研究新視角。
+                  </p>
+                  <div class="bg-white p-3 rounded text-xs text-gray-600">
+                    <strong>創新突破：</strong>提出「演算法中介下的認知社會資本轉譯」分析框架
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-8 max-w-4xl text-center">
+          <h3 class="text-2xl font-bold serif mb-4">研究價值與展望</h3>
+          <p class="text-gray-300 mb-6">
+            本研究完美避開特定實務場景，晉升到「管理理論與技術治理」的高度，非常符合DBA對於「理論與實務橋接」的要求。這份選題報告將成為博士論文一個非常強大的起點！
+          </p>
+          <div class="flex justify-center space-x-8 text-sm text-gray-400">
+            <span><i class="fas fa-university mr-2"></i>學術深度</span>
+            <span><i class="fas fa-industry mr-2"></i>實務相關</span>
+            <span><i class="fas fa-lightbulb mr-2"></i>理論創新</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#ffffff',
+                primaryTextColor: '#475569',
+                primaryBorderColor: '#1e3a8a',
+                lineColor: '#64748b',
+                secondaryColor: '#f8fafc',
+                tertiaryColor: '#e2e8f0',
+                background: '#ffffff',
+                mainBkg: '#ffffff',
+                secondaryBkg: '#f8fafc',
+                tertiaryBkg: '#e2e8f0',
+                nodeBkg: '#ffffff',
+                nodeBorder: '#1e3a8a',
+                clusterBkg: '#f8fafc',
+                clusterBorder: '#475569',
+                defaultLinkColor: '#64748b',
+                titleColor: '#1e3a8a',
+                edgeLabelBackground: '#ffffff',
+                nodeTextColor: '#475569'
+            },
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                curve: 'basis',
+                padding: 20
+            },
+            timeline: {
+                useMaxWidth: false,
+                padding: 20
+            },
+            gantt: {
+                useMaxWidth: false,
+                padding: 20
+            }
+        });
+
+        // Initialize Mermaid Controls for zoom and pan
+        function initializeMermaidControls() {
+            const containers = document.querySelectorAll('.mermaid-container');
+
+            containers.forEach(container => {
+            const mermaidElement = container.querySelector('.mermaid');
+            let scale = 1;
+            let isDragging = false;
+            let startX, startY, translateX = 0, translateY = 0;
+
+            // 触摸相关状态
+            let isTouch = false;
+            let touchStartTime = 0;
+            let initialDistance = 0;
+            let initialScale = 1;
+            let isPinching = false;
+
+            // Zoom controls
+            const zoomInBtn = container.querySelector('.zoom-in');
+            const zoomOutBtn = container.querySelector('.zoom-out');
+            const resetBtn = container.querySelector('.reset-zoom');
+            const fullscreenBtn = container.querySelector('.fullscreen');
+
+            function updateTransform() {
+                mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+                if (scale > 1) {
+                container.classList.add('zoomed');
+                } else {
+                container.classList.remove('zoomed');
+                }
+
+                mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+            }
+
+            if (zoomInBtn) {
+                zoomInBtn.addEventListener('click', () => {
+                scale = Math.min(scale * 1.25, 4);
+                updateTransform();
+                });
+            }
+
+            if (zoomOutBtn) {
+                zoomOutBtn.addEventListener('click', () => {
+                scale = Math.max(scale / 1.25, 0.3);
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+                updateTransform();
+                });
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+                });
+            }
+
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', () => {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+                });
+            }
+
+            // Mouse Events
+            mermaidElement.addEventListener('mousedown', (e) => {
+                if (isTouch) return; // 如果是触摸设备，忽略鼠标事件
+
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                mermaidElement.style.cursor = 'grabbing';
+                updateTransform();
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && !isTouch) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            // 获取两点之间的距离
+            function getTouchDistance(touch1, touch2) {
+                return Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+                );
+            }
+
+            // Touch Events - 触摸事件处理
+            mermaidElement.addEventListener('touchstart', (e) => {
+                isTouch = true;
+                touchStartTime = Date.now();
+
+                if (e.touches.length === 1) {
+                // 单指拖动
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+
+                } else if (e.touches.length === 2) {
+                // 双指缩放
+                isPinching = true;
+                isDragging = false;
+
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                initialDistance = getTouchDistance(touch1, touch2);
+                initialScale = scale;
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isDragging && !isPinching) {
+                // 单指拖动
+                const touch = e.touches[0];
+                translateX = touch.clientX - startX;
+                translateY = touch.clientY - startY;
+                updateTransform();
+
+                } else if (e.touches.length === 2 && isPinching) {
+                // 双指缩放
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                const currentDistance = getTouchDistance(touch1, touch2);
+
+                if (initialDistance > 0) {
+                    const newScale = Math.min(Math.max(
+                    initialScale * (currentDistance / initialDistance),
+                    0.3
+                    ), 4);
+                    scale = newScale;
+                    updateTransform();
+                }
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchend', (e) => {
+                // 重置状态
+                if (e.touches.length === 0) {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                // 延迟重置isTouch，避免鼠标事件立即触发
+                setTimeout(() => {
+                    isTouch = false;
+                }, 100);
+                } else if (e.touches.length === 1 && isPinching) {
+                // 从双指变为单指，切换为拖动模式
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+                }
+
+                updateTransform();
+            });
+
+            mermaidElement.addEventListener('touchcancel', (e) => {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                setTimeout(() => {
+                isTouch = false;
+                }, 100);
+
+                updateTransform();
+            });
+
+            // Enhanced wheel zoom with better center point handling
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const rect = container.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+
+                // Adjust translation to zoom towards center
+                if (newScale !== scale) {
+                const scaleDiff = newScale / scale;
+                translateX = translateX * scaleDiff;
+                translateY = translateY * scaleDiff;
+                scale = newScale;
+
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+
+                updateTransform();
+                }
+            });
+
+            // Initialize display
+            updateTransform();
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Mermaid controls
+            initializeMermaidControls();
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Highlight active section in TOC
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.toc-fixed a');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('bg-blue-100', 'text-blue-800', 'font-medium');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('bg-blue-100', 'text-blue-800', 'font-medium');
+                    }
+                });
+            });
+        });
+    </script>
+  
+
+</body></html>
